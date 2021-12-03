@@ -37,7 +37,6 @@ class RegistrationSerializer(serializers.ModelSerializer):
         user.is_admin = False
         user.is_superuser = False
         user.save()
-        # user = NewUser.object.create(mentor=mentor, **self.validated_data)
         return user
 
 
@@ -95,7 +94,6 @@ class QuestionSerializer(serializers.ModelSerializer):
         question.file = self.validated_data['file']
         question.post_time = self.validated_data['post_time']
         question.replied_time = self.validated_data['replied_time']
-        # question = Questions.objects.create(user=user, mentor=mentor, **validated_data)
         question.save()
 
         return question
