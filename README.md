@@ -18,7 +18,7 @@ Student Root: http://127.0.0.1:8000/
 Running the Project Locally
 First, clone the repository to your local machine:
 
-git clone https://github.com/jamilnoyda/Make-REST-API-in-Django-using-Django-REST-Framework..git
+git clone https://github.com/mahadikrushikesh/StudentMentorProject.git
 Install the requirements:
 
 pip install -r requirements.txt
