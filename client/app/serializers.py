@@ -30,7 +30,6 @@ class RegistrationSerializer(serializers.ModelSerializer):
         if password != password2:
             raise serializers.ValidationError({"message": "passwords must match.", "status": False})
         # password_hash = make_password(password)
-        # mentor = Mentor.objects.get(email=self.validated_data.pop("mentor"))
         user.mentor = self.validated_data['mentor']
         user.set_password(password)
         user.role = self.validated_data['role']
@@ -101,18 +100,3 @@ class QuestionSerializer(serializers.ModelSerializer):
 
         return question
 
-    # def update(self, instance, validated_data):
-    #     question = Questions(
-    #         question__exact=self.validated_data['question'],
-    #         user=self.validated_data['student'],
-    #         mentor=self.validated_data['mentor']
-    #     )
-    #     question.reply = self.validated_data['reply']
-    #     question.message = self.validated_data['message']
-    #     question.file_name = self.validated_data['file_name']
-    #     question.file = self.validated_data['file']
-    #     question.post_time = self.validated_data['post_time']
-    #     question.replied_time = self.validated_data['reply_time']
-    #     question.save()
-    #
-    #     return question
